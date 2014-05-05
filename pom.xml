@@ -11,7 +11,7 @@
     <artifactId>ninja-web2</artifactId>
     <packaging>war</packaging>
     <groupId>scm.workshop2</groupId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     
     <url>http://www.ninjaframework.org</url>
     
@@ -23,8 +23,8 @@
 
 
     <build>
+        <finalName>ronin-${project.version}</finalName>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -121,6 +121,15 @@
                             <mainClass>ninja.standalone.NinjaJetty</mainClass>
                         </manifest>
                     </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <useFile>false</useFile>
                 </configuration>
             </plugin>
 
